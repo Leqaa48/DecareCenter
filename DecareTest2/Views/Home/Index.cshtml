@@ -1,0 +1,98 @@
+﻿@model Center
+@{
+    ViewData["Title"] = "Home";
+}
+
+
+<!-- slider-area -->
+<section id="home" class="slider-area slider-four fix p-relative">
+
+    <div class="slider-active" style="background: #00173c;">
+        <div class="single-slider slider-bg d-flex align-items-center" style="background-image: url(@Model.Image); background-size: cover;">
+            <div class="container">
+                <div class="row justify-content-center align-items-center">
+
+                    <div class="col-lg-10 col-md-10 text-center">
+                        <div class="slider-content s-slider-content slider-text-2 mt-20">
+                            <h2 data-animation="fadeInUp" data-delay=".4s">We Are Best Solution Dental Service</h2>
+                            <div class="slider-btn mt-20">
+                                <a asp-action="ContactUs" asp-controller="Home" class="btn ss-btn" data-animation="fadeInLeft" data-delay=".4s">Contact Us</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- slider-area-end -->
+<!-- service-details2-area -->
+@await Component.InvokeAsync("Service")
+<!-- service-details2-area-end -->
+<!-- about-area -->
+<section class="about-area about-p pb-120 p-relative fix">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="s-about-img p-relative  wow fadeInLeft animated" data-animation="fadeInLeft" data-delay=".4s">
+                    <img src="~/main/decare/img/features/about_img.png" alt="img">
+                    <div class="about-text second-about">
+                        <span>@Model.YearsOfExperience</span>
+                        <p>Years of Experience</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="about-content s-about-content  wow fadeInRight  animated" data-animation="fadeInRight" data-delay=".4s">
+                    <div class="about-title second-title pb-25">
+                        <h5>About Us</h5>
+                        <h2>We Care For Your Dental Health</h2>
+                    </div>
+                    <p>
+                        @Model.BriefDescription
+                    </p>
+
+                    <div class="slider-btn mt-20">
+                        <a asp-action="Index" asp-controller="AboutUs" class="btn ss-btn smoth-scroll">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- about-area-end -->
+<!-- faq-area -->
+@await Component.InvokeAsync("Faq")
+<!-- faq-aread-end -->
+<!-- team-area -->
+@await Component.InvokeAsync("Doctor")
+<!-- team-area-end -->
+<!-- call-area -->
+<div class="call-area" style="background-image:url(../main/decare/img/bg/call-bg.png); background-repeat: no-repeat; background-position: bottom;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 col-md-5 col-sm-12">
+                <div class="single-counter-img fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
+                    <img src="~/main/decare/img/bg/call-man.png" alt="img" class="img">
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-7 col-sm-12">
+                <div class="call-text">
+                    <h5>Book Dentail Appointment</h5>
+                    <h2>We Are open And Welcoming Patients</h2>
+                    <a asp-action="Create" asp-controller="Appointments" class="btn">Book Appointment</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- call-area-end -->
+<!-- blog-area -->
+<!-- blog-area-end -->

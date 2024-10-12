@@ -1,0 +1,59 @@
+﻿@model IEnumerable<DecareCenter.Models.Center>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Centers</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CenterName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkDaysStart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkDaysEnd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkHours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CenterAddress)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CenterName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkDaysStart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkDaysEnd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkHours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CenterAddress)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CenterId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CenterId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CenterId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

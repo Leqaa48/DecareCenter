@@ -1,0 +1,53 @@
+﻿@model IEnumerable<DecareCenter.Models.GalleryImage>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Gallery</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Center)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsDeleted)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    <img src="@item.Image" alt="@item.Center.CenterName" class="img-fluid" style="width:100px;height:100px" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Center.CenterName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDeleted)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.GalleryImageId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.GalleryImageId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.GalleryImageId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

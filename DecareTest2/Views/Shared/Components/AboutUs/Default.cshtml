@@ -1,0 +1,31 @@
+﻿@model IEnumerable<AboutUs>
+@foreach (var item in Model)
+{
+    <section class="about-area about-p pb-120 p-relative fix">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="s-about-img p-relative  wow fadeInLeft animated" data-animation="fadeInLeft" data-delay=".4s">
+                        <img src="@item.Image" alt="img">
+                        <div class="about-text second-about">
+                            <span>@ViewBag.GetYearsOfExperience</span>
+                            <p>Years of Experience</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="about-content s-about-content  wow fadeInRight  animated" data-animation="fadeInRight" data-delay=".4s">
+                        <div class="about-title second-title pb-25">
+                            <h5>About Us</h5>
+                            <h2>@item.AboutUsTitle</h2>
+                        </div>
+                        <p>@item.AboutUsDetails</p>
+                        <p>@item.AboutUsDetails2</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}

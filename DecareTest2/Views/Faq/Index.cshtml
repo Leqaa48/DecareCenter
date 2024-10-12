@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Faq>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section id="faq" class="faq-area pt-120 pb-120">
+
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-6 col-md-6">
+                    <div class="faq-wrap">
+                        <div class="accordion" id="accordionExample">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0">
+                                        <button class="faq-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-bs-expanded="true" aria-bs-controls="collapseOne">
+                                            @item.Question
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style="">
+                                    <div class="card-body">
+                                        @item.Answer
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section> 
+

@@ -1,0 +1,47 @@
+﻿@model Service
+
+@{
+    ViewData["Title"] = "Service Details";
+}
+
+<div class="about-area5 about-p p-relative">
+    <div class="container pt-30 pb-90">
+
+        <div class="row ">
+            <!-- #right side -->
+            <div class="col-sm-12 col-md-12 col-lg-4 order-1">
+                <aside class="sidebar services-sidebar" >
+                    <!--Service Contact-->
+                    <div class="service-detail-contact wow fadeup-animation" data-wow-delay="1.1s" style="margin-top: -20px">
+                        <h3>We Are open And Welcoming Patients</h3>
+                        <a asp-action="Create" asp-controller="Appointments" class="btn">Book Appointment</a>
+                    </div>
+                    <div class="service-detail-contact wow fadeup-animation" data-wow-delay="1.1s">
+                        <h3 class="h3-title">If You Need Any Help Contact With Us</h3>
+                        <a href="https://wa.me/00962786634288" target="_blank" class="text-primary" title="Call now">@ViewBag.CenterPhone</a>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- #right side end -->
+
+
+            <div class="col-lg-8 col-md-12 col-sm-12 order-2">
+                <div class="service-detail">
+                    <div class="content-box">
+                        <h2>
+                            We give the best Services 
+                            <span class="image-column col-xl-6 col-lg-12 col-md-12" >
+                                <img src="@Model.Image" alt="@Model.ServiceName" style="height:50px ; width:50px">
+                            </span>
+                        </h2>
+                        <p>@Model.Description</p>
+                        <h3>Why Choose This Service</h3>
+                        <p>@Model.Why</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

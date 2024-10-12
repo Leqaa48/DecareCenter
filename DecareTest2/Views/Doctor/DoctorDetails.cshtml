@@ -1,0 +1,58 @@
+﻿@model Doctor
+@{
+    ViewData["Title"] = "DoctorDetails";
+}
+
+<section class="team-area-content">
+    <div class="container">
+
+        <!-- Lower Content -->
+        <div class="lower-content">
+            <div class="row">
+                <div class="col-lg-3 col-md-12 col-sm-12 text-center">
+                    <div class="team-img-box">
+                        <img src="@Model.DoctorImage" alt="img">
+                    </div>
+
+                </div>
+
+                <div class="text-column col-lg-9 col-md-12 col-sm-12">
+                    <div class="s-about-content pl-30 wow fadeInRight" data-animation="fadeInRight" data-delay=".2s">
+                        <h4>Personal Info</h4>
+                        <p>
+                            @Model.Info
+                        </p>
+                        <div class="col-lg-6">
+                            <div class="per-info">
+                                <h4>Personal Info</h4>
+                                <ul>
+                                    <li>
+                                        <div class="icon"><i class="fal fa-envelope"></i> <strong>Email</strong></div>
+                                        <div class="text" href="mailto:leqaa.abujubbeh97@gmail.com">@Model.Email</div>
+                                    </li>
+                                    <li>
+                                        <div class="icon"><i class="fal fa-phone"></i> <strong>Phone</strong></div>
+                                        <div class="text">@Model.Phone</div>
+                                    </li>
+                                    <li>
+                                        <div class="icon"><i class="fab fa-facebook-f"></i> <strong>Facebook</strong></div>
+                                        <div class="text">
+                                            <a class="icon" href="@Model.FacebookUrl">@Model.Name</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    </div>
+</section>
+

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<DecareCenter.Models.AboutUs>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>About us</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AboutUsTitle)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Center)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AboutUsTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Center.CenterName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AboutUsId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AboutUsId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AboutUsId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

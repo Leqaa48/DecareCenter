@@ -1,0 +1,27 @@
+﻿@model IEnumerable<GalleryImage>
+
+<section id="work" class="pt-105 pb-95">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="masonry-gallery-huge">
+                    <div class="grid col2">
+                        @foreach (var item in Model)
+                        {
+                            <div class="grid-item hover-zoomin banking">
+                                <a class="popup-image" href="@item.Image">
+                                    <figure class="gallery-image">
+                                        <img src="@item.Image" alt="img" class="img">
+                                    </figure>
+                                </a>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>

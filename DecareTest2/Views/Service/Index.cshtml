@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@await Component.InvokeAsync("Service")
+
+<div class="call-area" style="background-image:url(../main/decare/img/bg/call-bg.png); background-repeat: no-repeat; background-position: bottom;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 col-md-5 col-sm-12">
+                <div class="single-counter-img fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
+                    <img src="~/main/decare/img/bg/call-man.png" alt="img" class="img">
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-7 col-sm-12">
+                <div class="call-text">
+                    <h5>Book Dentail Appointment</h5>
+                    <h2>We Are open And Welcoming Patients</h2>
+                    <a asp-action="Create" asp-controller="Appointments" class="btn">Book Appointment</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
